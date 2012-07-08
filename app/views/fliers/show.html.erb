@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b> title:</b>
+  <%= @flier. title %>
+</p>
+
+<p>
+  <b>Tagline:</b>
+  <%= @flier.tagline %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @flier.description %>
+</p>
+
+<p>
+  <b>Starttime:</b>
+  <%= @flier.starttime %>
+</p>
+
+<p>
+  <b>Endtime:</b>
+  <%= @flier.endtime %>
+</p>
+
+<p>
+  <b>Imageurl:</b>
+  <%= @flier.imageurl %>
+</p>
+
+
+<%= link_to 'Edit', edit_flier_path(@flier) %> |
+<%= link_to 'Back', fliers_path %>

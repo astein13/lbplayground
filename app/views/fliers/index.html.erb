@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<h1> Fliers For Your Community </h1>
+
+<table>
+  <% @fliers.each do |flier| %>
+  <tr>
+    <td><%= image_tag(flier.imageurl) %> </td>
+    <td> <%= flier.title  %> </td>
+    <td> <%= link_to 'Show', flier %> <br/>
+         <%= link_to 'Edit', edit_flier_path(flier) %><br/>
+         <%= link_to 'Destroy', flier,
+          :confirm => 'Are you sure?',
+          :method => :delete %>
+    </td>
+  </tr>
+ <% end %>
+</table>
+
+<br/>
+
+<%= link_to 'New Flier', new_flier_path %>
