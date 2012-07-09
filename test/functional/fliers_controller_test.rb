@@ -3,6 +3,14 @@ require 'test_helper'
 class FliersControllerTest < ActionController::TestCase
   setup do
     @flier = fliers(:one)
+    @update = {
+      :title => 'Lorem Ipsum',
+      :tagline => 'Ipsum dolorem',
+      :description => 'Yeah buddy.',
+      :starttime => DateTime.parse("2013, 4, 21, 13"),
+      :endtime => DateTime.parse("2013, 4, 21, 15"),
+      :imageurl => '/images/seeds/tomjones.jpg'
+    }
   end
 
   test "should get index" do
@@ -18,7 +26,7 @@ class FliersControllerTest < ActionController::TestCase
 
   test "should create flier" do
     assert_difference('Flier.count') do
-      post :create, flier: {  title: @flier. title, description: @flier.description, endtime: @flier.endtime, imageurl: @flier.imageurl, starttime: @flier.starttime, tagline: @flier.tagline }
+    post :create, :flier => @update
     end
 
     assert_redirected_to flier_path(assigns(:flier))
@@ -35,7 +43,7 @@ class FliersControllerTest < ActionController::TestCase
   end
 
   test "should update flier" do
-    put :update, id: @flier, flier: {  title: @flier. title, description: @flier.description, endtime: @flier.endtime, imageurl: @flier.imageurl, starttime: @flier.starttime, tagline: @flier.tagline }
+    put :update, :id => @flier.to_param, :flier => @update
     assert_redirected_to flier_path(assigns(:flier))
   end
 

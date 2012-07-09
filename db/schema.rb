@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120708182320) do
+ActiveRecord::Schema.define(:version => 20120708234518) do
 
   create_table "fliers", :force => true do |t|
     t.string   "title"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20120708182320) do
     t.string   "imageurl"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "community"
   end
 
 end

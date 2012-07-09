@@ -1,0 +1,17 @@
+<h1> My Community Liveboard </h1>
+
+<% if notice %>
+  <p id="notice">
+    <%= notice %>
+  </p>
+<% end %>
+
+<% @fliers.each do |flier| %>
+  <div>
+    <%= link_to image_tag(flier.imageurl, { :border => '1' }), flier_path(flier.id) %>
+    <h2> <%=  flier.title %> </h2>
+    <h3> "<%= flier.tagline %>" </h3>
+    <%= button_to 'Add to My Board', 'google.com' %>
+    <br/>
+  </div>
+<% end %>

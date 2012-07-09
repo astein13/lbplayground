@@ -11,8 +11,9 @@ Flier.create(:title => 'XY Presents: Tom Jones',
   :tagline => 'Beer. Steak. Lobster.',
   :description => 'The 5th Annual Tom Jones.  Steak, Lobster, Beer.',
   :starttime => DateTime.parse("2013, 4, 21, 13"),
+  :imageurl => '/images/seeds/tomjones.jpg',
   :endtime => DateTime.parse("2013, 4, 21, 17"),
-  :imageurl => '/images/seeds/tomjones.jpg'
+  :community => 'Amherst'
   )
 
 Flier.create(:title => 'Amherst v. Williams Football!',
@@ -20,7 +21,8 @@ Flier.create(:title => 'Amherst v. Williams Football!',
   :description => 'Come join SoCo for Pizza and freebies before watching
                    Amherst route the Ephs.',
   :starttime => DateTime.parse("2013, 9, 21, 13"),
+  :imageurl => '/images/seeds/awf.jpg',
   :endtime => DateTime.parse("2013, 4, 21, 16"),
-  :imageurl => '/images/seeds/awf.jpg'
+  :community => 'Amherst'
   )
 

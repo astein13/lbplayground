@@ -1,6 +1,11 @@
 Lbplayground01::Application.routes.draw do
+  get "liveboard/index"
+
   resources :fliers
 
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -51,7 +56,7 @@ Lbplayground01::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to=>'liveboard#index', :as => 'liveboard'
 
   # See how all your routes lay out with "rake routes"
 
