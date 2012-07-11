@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  
   def self.from_omniauth(auth)
   where(auth.slice(:provider, :fbid)).first_or_initialize.tap do |user|
     user.provider = auth.provider
@@ -10,5 +11,6 @@ class User < ActiveRecord::Base
     user.oauth_expires_at = Time.at(auth.credentials.expires_at)
     user.save!
   end
-end
+  end
+  
 end

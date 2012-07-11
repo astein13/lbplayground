@@ -5,10 +5,15 @@ Lbplayground01::Application.routes.draw do
 
   get "liveboard/index"
   get "welcome/index"
-  
-  resources :fliers
 
  
+ 
+
+  resources :fliers
+
+ #match paths
+ match 'signout', to: 'sessions#destroy', as: 'signout'
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -7,6 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if current_user %>
+  <p> Signed in as <%= current_user.fname %> <%=current_user.lname %> <br/>
+  <%= link_to 'MyBoard', 'myboard/index.html' %>
+  <%= link_to 'Sign Out', 'signout' %>
+  </p>
+<% else %>
+  <p>
+    You are not signed in!
+
+  </p>
+<% end %>
 
 <%= yield %>
 
