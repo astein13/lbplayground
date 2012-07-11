@@ -1,0 +1,35 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Provider</th>
+    <th>Fbid</th>
+    <th>Fname</th>
+    <th>Lname</th>
+    <th>Image</th>
+    <th>Oauth expires at</th>
+    <th>Oauth token</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.provider %></td>
+    <td><%= user.fbid %></td>
+    <td><%= user.fname %></td>
+    <td><%= user.lname %></td>
+    <td><%= user.image %></td>
+    <td><%= user.oauth_expires_at %></td>
+    <td><%= user.oauth_token %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120709034616) do
+ActiveRecord::Schema.define(:version => 20120710025444) do
 
   create_table "fliers", :force => true do |t|
     t.string   "title"
@@ -27,10 +27,14 @@ ActiveRecord::Schema.define(:version => 20120709034616) do
 
   create_table "users", :force => true do |t|
     t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "fbid"
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "image"
+    t.datetime "oauth_expires_at"
+    t.string   "oauth_token"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end
