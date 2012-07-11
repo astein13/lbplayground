@@ -5,7 +5,7 @@ Lbplayground01::Application.routes.draw do
 
   get "liveboard/index"
   get "welcome/index"
-
+  
  
  
 
@@ -13,7 +13,7 @@ Lbplayground01::Application.routes.draw do
 
  #match paths
  match 'signout', to: 'sessions#destroy', as: 'signout'
-  
+ match 'addevent', to: 'user_events#create', as: 'addevent'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
